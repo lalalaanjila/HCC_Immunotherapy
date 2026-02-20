@@ -214,7 +214,7 @@ if st.button("点击进行预测"):
             shap_values_sample = shap_values[0]
             expected_value = explainer.expected_value
 
-        shap.initjs()
+        # shap.initjs()
         plt.figure(figsize=(10, 3))
         shap.force_plot(
             expected_value,
@@ -229,3 +229,4 @@ if st.button("点击进行预测"):
 
 
     st.image("shap_force_plot_hcc.png", caption="当前患者的 SHAP 力图（特征对应答概率的贡献）")
+
