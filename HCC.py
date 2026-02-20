@@ -3,7 +3,11 @@
 # ==========================================================
 
 import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import shap
+import joblib   # ←←← 这一行必须有！！！
 
 MODEL_PATH = "XGBoost.pkl"
 DATA_PATH = "HCC.csv"
@@ -222,5 +226,6 @@ if st.button("点击进行预测"):
         plt.tight_layout()
         plt.savefig("shap_force_plot_hcc.png", bbox_inches="tight", dpi=300)
         plt.close()
+
 
     st.image("shap_force_plot_hcc.png", caption="当前患者的 SHAP 力图（特征对应答概率的贡献）")
